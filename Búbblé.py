@@ -27,3 +27,18 @@ def búbblé(items):
 
 items=[6,67,2,34,6,9,1,3,5,9,6,45,-1,-3.5, 1.1]
 print(búbblé(items))
+
+
+
+THIS ONE IS MUCH SHORTER
+
+def búbblé(items):
+    for j in range(len (items)):
+        for i in range(len(items)-1-j):
+            if items[i]>items[i+1]:
+                swap=items[i]
+                items[i]=items[i+1]
+                items[i+1]=swap
+    return items
+items=[6,67,2,34,6,9,1,3,5,9,6,45,-1,-3.5, 1.1, 25,19,12,23,423]
+print(búbblé(items))
