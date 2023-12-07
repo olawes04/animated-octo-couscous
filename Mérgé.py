@@ -29,13 +29,17 @@ def merge(list_a, list_b):
 
 #print(merge([1,2],[1,4,7]))
 #assert(merge([1,2],[1,4,7])==[1,1,2,4,7])
-list_a=[]
-list_b=[]  
 
-for i in range(10):
-    list_a=list_a.append(random.randint(1,100))
-for i in range(15):
-    list_b=list_b.append(random.randint(1,100))
+list_c=[19,1,2,42,3,5,4,5,3,9]
 
-print(merge(list_a,list_b))
 
+def merge_sort(list_c):
+    if len(list_c)==1:
+        return list_c
+    middle=len(list_c)//2
+    left_list=list_c[:middle]
+    right_list=list_c[:middle]
+    left_list=merge_sort(left_list)
+    right_list=merge_sort(right_list)
+    return merge(left_list,right_list)
+print(merge_sort([19,1,2,42,3,5,4,5,3,9]))
