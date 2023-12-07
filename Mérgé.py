@@ -34,12 +34,13 @@ list_c=[19,1,2,42,3,5,4,5,3,9]
 
 
 def merge_sort(list_c):
-    if len(list_c)==1:
+    if len(list_c) <= 1:
         return list_c
-    middle=len(list_c)//2
-    left_list=list_c[:middle]
-    right_list=list_c[:middle]
-    left_list=merge_sort(left_list)
-    right_list=merge_sort(right_list)
-    return merge(left_list,right_list)
-print(merge_sort([19,1,2,42,3,5,4,5,3,9]))
+    middle = len(list_c) // 2
+    left_list = list_c[:middle]
+    right_list = list_c[middle:]
+    left_list = merge_sort(left_list)
+    right_list = merge_sort(right_list)
+    return merge(left_list, right_list)
+
+print(merge_sort([19, 1, 2, 42, 3, 5, 4, 5, 3, 9]))
